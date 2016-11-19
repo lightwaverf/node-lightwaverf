@@ -147,7 +147,7 @@ LightwaveRF.prototype.requestEnergy = function(callback) {
  */
 LightwaveRF.prototype.turnDeviceOff = function(roomId, deviceId, callback) {
 	var state = "0";
-	this.exec("!R" + roomId + "D" + deviceId + "F" + state + "|\0", callback);
+	this.exec("!R" + roomId + "D" + deviceId + "F" + state, callback);
 }
 
 /**
@@ -161,7 +161,7 @@ LightwaveRF.prototype.turnDeviceOff = function(roomId, deviceId, callback) {
  */
 LightwaveRF.prototype.turnDeviceOn = function(roomId, deviceId, callback) {
 	var state = "1";
-	this.exec("!R" + roomId + "D" + deviceId + "F" + state + "|\0", callback);
+	this.exec("!R" + roomId + "D" + deviceId + "F" + state, callback);
 }
 
 /**
@@ -192,7 +192,7 @@ LightwaveRF.prototype.setDeviceDim = function(roomId, deviceId, dimPercentage , 
     if (dimAmount === 0) {
         this.turnDeviceOff(roomId, deviceId, callback);
     } else {
-        this.exec("!R" + roomId + "D" + deviceId + "FdP" + dimAmount + "|\0", callback);
+        this.exec("!R" + roomId + "D" + deviceId + "FdP" + dimAmount, callback);
     }
 }
 
